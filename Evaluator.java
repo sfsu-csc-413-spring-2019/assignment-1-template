@@ -5,7 +5,7 @@ public class Evaluator {
   private Stack<Operator> operatorStack;
 
   private StringTokenizer tokenizer;
-  private static final String DELIMITERS = "+-*^/#! ";
+  private static final String DELIMITERS = "+-*^/() ";
 
   public Evaluator() {
     operandStack = new Stack<>();
@@ -26,8 +26,6 @@ public class Evaluator {
 
     // TODO Operator is abstract - this will need to be fixed:
     // operatorStack.push( new Operator( "#" ));
-
-    // When is it a good time to add the "!" operator?
 
     while ( this.tokenizer.hasMoreTokens() ) {
       // filter out spaces
@@ -70,11 +68,11 @@ public class Evaluator {
     // and the operator stack will have + * with 2 and * on the top;
     // In order to complete the evaluation we must empty the stacks (except
     // the init operator on the operator stack); that is, we should keep
-    // evaluating the operator stack until it only contains the init operator;
+    // evaluating the operator stack until empty
     // Suggestion: create a method that takes an operator as argument and
     // then executes the while loop; also, move the stacks out of the main
     // method
-    
+
     return 0;
   }
 }
